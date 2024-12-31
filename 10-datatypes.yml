@@ -1,15 +1,19 @@
 - name: ansible
   hosts: localhost
   become: true 
+  vars: 
+    COURSE: "devops" # string
+    Tools: # list
+    - linux
+    - terraform
+    - ansible
+    Experience: # map or dictionary
+      devops: 3
+      aws: 2
+      docker: 1
+    RealProject: true #boolean
   tasks:
-  - name: task-1
+  - name: printing the contents
     ansible.builtin.debug:
-      msg: "hi am learning devops , duration is four  months"
-  - name: task-2
-    ansible.builtin.debug:
-      - linux
-      - terraform
-  - name: task-3
-    ansible.builtin.debug:
-      msg: "is this the course: yes"
+      msg: "{{COURSE}},{{Tools}},{{Experience}},{{RealProject}}"
 

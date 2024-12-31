@@ -3,7 +3,7 @@
   become: true
   vars_prompt:
     - name: COURSE
-      prompt: give the course name:
+      prompt: give the course name
       private: false 
   tasks:
   - name: task-1

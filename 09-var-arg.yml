@@ -1,13 +1,7 @@
 - name: ansible
   hosts: localhost
   become: true
-  vars_prompt:
-    - name: COURSE
-      prompt: give the course name
-      private: false 
-    - name: VALUE
-      prompt: give the value  name
-      private: false 
+  vars: 
   tasks:
   - name: task-1
     ansible.builtin.debug:

@@ -1,0 +1,17 @@
+- name: ansible
+  hosts: localhost
+  become: true 
+  tasks:
+  - name: task-1
+    ansible.builtin.debug:
+    msg: "hi am learning devops , duration is four  months"
+  - name: task-2
+    ansible.builtin.debug:
+    - msg "tools are:"
+    - linux
+    - terraform
+    - ansible 
+  - name: task-3
+    ansible.builtin.debug:
+    msg: "is this the course: yes"
+

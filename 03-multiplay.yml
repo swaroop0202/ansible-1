@@ -1,0 +1,10 @@
+- name: PLAY1
+  hosts: localhost
+  become: true
+  tasks:
+  - name: PLAY-1 TASK-1
+    ansible.builtin.debug:
+      msg: "hi..am learning ansible"
+  - name: PLAY-2 TASK-2
+    ansible.builtin.debug:
+      msg: "hi..am learning terraform"  

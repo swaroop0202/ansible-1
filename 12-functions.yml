@@ -12,11 +12,15 @@
     ansible.builtin.debug:
       msg: "priniting the numbers{{ numbers | unique }}"
   - name: task-3
+    vars:
+      msg: hi this is swaroop
     ansible.builtin.debug:
-      msg: "{{ hi this is swaroop|upper }}"
+      msg: "{{ msg | upper }}"
   - name: task-3
+    vars:
+      msg: hi this is SWAROOP 
     ansible.builtin.debug:
-      msg: "{{ hi this is swaroop | lower }}"
+      msg: "{{ msg | lower }}"
   - name: task-4
     vars:
       my_dict:

@@ -1,5 +1,5 @@
 - name: functions
-  hosts: web
+  hosts: localhost
   become: true
   vars: 
   tasks:

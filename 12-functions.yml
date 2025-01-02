@@ -22,6 +22,6 @@
       COURSE: "devops"
       TRAINER: "shiva"
       DURATION: "120hrs"
-    ansible.builtin.dict2items:
+    ansible.builtin.debug:
       msg: "am leraning {{COURSE}}, trainer is {{TRAINER}}, durationis {{DURATION}} | dict2items"
       

@@ -13,7 +13,7 @@
       msg: "priniting the numbers{{ numbers | unique }}"
   - name: task-3
     ansible.builtin.debug:
-      msg: "hi this is swaroop | upper"
+      msg: "{{ hi this is swaroop|upper }}"
   - name: task-3
     ansible.builtin.debug:
       msg: "{{ hi this is swaroop | lower }}"

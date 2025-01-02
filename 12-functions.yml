@@ -16,13 +16,13 @@
       msg: "{{ hi this is swaroop | upper }}"
   - name: task-3
     ansible.builtin.debug:
-      msg: "{{ HI THIS IS SWAROOP | lower }}"
+      msg: "{{ hi this is swaroop | lower }}"
   - name: task-4
     vars:
       my_dict:
         COURSE: "devops"
         TRAINER: "shiva"
         DURATION: "120hrs"
-    ansible.builtin.dict2items:
+    ansible.builtin.debug:
       msg: "am learning {{ my_dict | dict2items }}"
       

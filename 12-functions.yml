@@ -5,7 +5,7 @@
   tasks:
   - name: task-1
     ansible.builtin.debug:
-      msg: "hi am learning {{course | default(Ansible)}} "
+      msg: "hi am learning {{ course | 'default(Ansible)' }} "
   - name: task-2
     vars: 
       numbers: [ 21,22,23,23,24,25 ]

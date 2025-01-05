@@ -61,8 +61,11 @@
 
   - name: loading the schema into database
     community.mysql.mysql_db:
+      login_user: root
+      login_password: "{{ mysql_root_password }}"
+      login_host: db.masterdevops.store
       name: all 
       state: import
-      target: /app/schema/backend.sql
+      target: /app/schema/backend.sql  
 
   

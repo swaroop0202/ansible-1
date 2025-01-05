@@ -38,7 +38,7 @@
   - name: setting up the systemd services
     ansible.builtin.copy:
       src: backend.service
-      des: /etc/systemd/system/
+      dest: /etc/systemd/system/backend.service
 
   - name: installing python dependencies
     ansible.builtin.pip:

@@ -61,7 +61,7 @@
 
   - name: loading the schema into database
     community.mysql.mysql_db:
-      name: database
+      name: all 
       state: import
       target: /app/schema/backend.sql
 

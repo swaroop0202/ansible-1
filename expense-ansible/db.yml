@@ -1,0 +1,14 @@
+- name: configuring db server 
+  hosts: db
+  become: true
+  tasks:
+  - name: installing mysql server
+    ansible.builtin.dnf: 
+      name: mysql-server
+      state: latest
+  - name: start and enable mysql server
+    ansible.builtin.service:
+      state: started
+      enabled: true
+  - name: setting the root password
+    ansible.builtin.command: mysql_secure_installation --set-root-pass ExpenseApp@1

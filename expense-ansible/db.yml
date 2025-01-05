@@ -20,7 +20,7 @@
       name:
       - MyPySQL
       - cryptography
-      executable: 3.9 
+      executable: pip3.9
 
   - name: checking mysql credentials
     community.mysql.mysql_info:

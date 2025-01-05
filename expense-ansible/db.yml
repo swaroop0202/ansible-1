@@ -15,15 +15,12 @@
       state: started
       enabled: true
 
-  - name: Make sure pymysql is present
-    pip:
-      name: pymysql
-      state: present
-
-  - name: installing packages
+  - name: installing python dependencies
     ansible.builtin.pip:
-      name: cryptography
-      state: latest 
+      name:
+      - PyMySQL
+      - cryptography
+      executable: pip3.9
 
   - name: checking mysql credentials
     community.mysql.mysql_info:

@@ -1,6 +1,8 @@
 - name: installing nodejs
   hosts: backend
   become: true
+  vars:
+    mysql_root_password: ExpenseApp@1
   tasks:
   - name: disabling nodejs 20
     ansible.builtin.command: dnf module disable nodejs -y
@@ -32,3 +34,35 @@
     ansible.builtin.command: npm install 
     args:
       chdir: /app      
+
+  - name: setting up the systemd services
+    ansible.builtin.copy:
+      src: backend.service
+      des: /etc/systemd/system/backend.service
+
+  - name: installing python dependencies
+    ansible.builtin.pip:
+      name:
+      - MyPySQL
+      - cryptography
+      executable: pip3.9
+
+  - name: installing mysql client 
+    ansible.builtin.dnf:
+      name: mysql
+      state: latest
+
+
+  - name: checking mysql credentials
+    community.mysql.mysql_info:
+      login_user: root
+      login_password: "{{ mysql_root_password }}"
+      login_host: db.masterdevops.store
+
+  - name: loading the schema into database
+    community.mysql.mysql_db:
+      name: database
+      state: import
+      target: /app/schema/backend.sql
+
+  

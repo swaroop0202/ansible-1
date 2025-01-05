@@ -33,6 +33,10 @@
     ignore_errors: true
     register: mysql_passwordcheck
 
+  - name: print ouput
+    ansible.builtin.debug:
+      msg: "output: {{mysql_passwordcheck}}"
+
   - name: setting the root password
     ansible.builtin.command: mysql_secure_installation --set-root-pass {{mysql_root_password}}
-    when: mysql_passwordcheck is true 
+    when: mysql_passwordcheck.failed is true 

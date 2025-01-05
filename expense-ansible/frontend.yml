@@ -33,7 +33,7 @@
   - name: setting up the systemd services
     ansible.builtin.copy:
       src: expense.conf 
-      dest: vim /etc/nginx/default.d/expense.conf
+      dest: /etc/nginx/default.d/expense.conf
 
   - name: restart nginx
     ansible.builtin.service:

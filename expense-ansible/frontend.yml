@@ -36,6 +36,6 @@
       dest: vim /etc/nginx/default.d/expense.conf
 
   - name: restart nginx
-    ansible.builin.service:
+    ansible.builtin.service:
       name: nginx
       state: restarted    
